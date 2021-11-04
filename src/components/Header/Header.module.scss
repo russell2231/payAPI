@@ -1,0 +1,99 @@
+@import '../../design/variables.scss';
+
+.header {
+	background: transparent;
+
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 4rem 2.4rem 3.2rem;
+		max-width: 1110px;
+
+		@media screen and (min-width: 768px) {
+			padding: 4rem 4rem 4.5rem;
+			gap: 64px;
+		}
+		@media screen and (min-width: 1024px) {
+			margin: 0 auto;
+			padding-bottom: 7.4rem;
+		}
+
+		.menu {
+			background: transparent;
+			border: none;
+			cursor: pointer;
+
+			&:active {
+				transform: scale(0.9);
+			}
+		}
+
+		.listContainer {
+			display: none;
+
+			@media screen and (min-width: 768px) {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex: 1;
+			}
+
+			.list {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+
+				@media screen and (min-width: 768px) {
+					display: flex;
+					gap: 40px;
+				}
+
+				.itemLink {
+					text-decoration: none;
+					color: $textSecondary;
+					font-weight: 700;
+					opacity: 0.7;
+					transition: opacity 200ms ease-in;
+
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.nav.open {
+		.menu {
+			z-index: 5;
+		}
+
+		.listContainer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 300px;
+			background: $bgSecondary;
+			display: flex;
+			flex-direction: column;
+			padding: 9.5rem 2.4rem 0;
+			gap: 3.2rem;
+
+			.list {
+				border-top: 1px solid white;
+				padding-top: 4.3rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 3.2rem;
+
+				.itemLink {
+					color: $white;
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}

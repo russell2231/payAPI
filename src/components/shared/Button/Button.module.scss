@@ -1,0 +1,21 @@
+@import '../../../design/variables.scss';
+
+.btn {
+	cursor: pointer;
+	border-radius: 24px;
+	border: none;
+	padding: 1.6rem 2.5rem;
+	font-size: 1.5rem;
+	font-family: $bodyFont;
+	font-weight: 700;
+	transition: background 250ms ease-in;
+
+	&.primary {
+		background: $btnPrimary;
+		color: $white;
+
+		&:hover {
+			background: $btnPrimaryHover;
+		}
+	}
+}
