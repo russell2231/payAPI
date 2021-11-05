@@ -1,0 +1,90 @@
+@import '../../design/variables.scss';
+
+.home {
+	.bgCircle {
+		position: absolute;
+		top: -64%;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: -1;
+
+		@media screen and (min-width: 768px) {
+			top: -40%;
+		}
+		@media screen and (min-width: 1024px) {
+			top: -10%;
+			left: unset;
+			transform: unset;
+			right: -10%;
+		}
+	}
+
+	.hero {
+		padding: 0 2.4rem 7.9rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 1110px;
+
+		@media screen and (min-width: 768px) {
+			padding: 0 9.7rem 9.9rem;
+		}
+		@media screen and (min-width: 1024px) {
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			margin: 0 auto;
+			padding: 0 4rem 7.5rem;
+		}
+		@media screen and (min-width: 1440px) {
+			padding: 0 0 7.5rem;
+		}
+
+		.heroImg {
+			width: 60%;
+			max-width: 400px;
+
+			@media screen and (min-width: 768px) {
+				width: 40%;
+			}
+			@media screen and (min-width: 1024px) {
+				width: 100%;
+			}
+		}
+
+		.heroContent {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			gap: 2.4rem;
+
+			@media screen and (min-width: 768px) {
+				max-width: 546px;
+			}
+			@media screen and (min-width: 1024px) {
+				text-align: left;
+			}
+
+			.heading {
+				margin: 0;
+			}
+
+			.tagline {
+				margin: 0;
+
+				@media screen and (min-width: 1024px) {
+					margin-left: 2.7rem;
+				}
+
+				& a {
+					color: $textSecondary;
+					font-weight: 700;
+					transition: opacity 200ms ease-in;
+
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+	}
+}

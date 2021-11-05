@@ -10,7 +10,7 @@ import styles from './Header.module.scss';
 
 const Header = () => {
 	const { windowWidth } = useGlobalContext();
-	const [isNavOpen, setIsNavOpen] = useState(true);
+	const [isNavOpen, setIsNavOpen] = useState(false);
 	const isMobile = windowWidth < 768;
 
 	const toggleNav = () => {
