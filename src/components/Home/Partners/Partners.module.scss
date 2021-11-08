@@ -1,0 +1,104 @@
+@import '../../../design/variables.scss';
+
+.partners {
+	background: url(../../../assets/shared/desktop/bg-pattern-circle.svg)
+			no-repeat,
+		$bgSecondary;
+	background-position: 50% -590px;
+	padding: 8rem 2.4rem;
+
+	@media screen and (min-width: 768px) {
+		background-position: 50% -550px;
+	}
+	@media screen and (min-width: 1440px) {
+		padding: 8.8rem 4rem;
+		background-position: -225px -350px;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 5.6rem;
+
+		@media screen and (min-width: 1440px) {
+			flex-direction: row-reverse;
+			align-items: center;
+			gap: unset;
+			justify-content: space-between;
+			max-width: 1110px;
+			margin: 0 auto;
+		}
+
+		.companies {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+			justify-content: space-between;
+			row-gap: 3.9rem;
+
+			@media screen and (min-width: 768px) {
+				max-width: 536px;
+				margin: 0 auto;
+				grid-template-columns: 1fr 1fr 1fr;
+				column-gap: 6rem;
+			}
+			@media screen and (min-width: 1440px) {
+				margin: unset;
+			}
+
+			.company {
+				& path {
+					fill: $white;
+				}
+
+				&:nth-of-type(2n) {
+					justify-self: end;
+				}
+
+				&:nth-of-type(5) {
+					@media screen and (min-width: 768px) {
+						justify-self: center;
+					}
+				}
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			@media screen and (min-width: 768px) {
+				max-width: 457px;
+				margin: 0 auto;
+			}
+			@media screen and (min-width: 1440px) {
+				text-align: left;
+				margin: unset;
+				max-width: 445px;
+				align-items: flex-start;
+			}
+
+			.heading {
+				color: $white;
+				margin: 0;
+				font-size: 3.2rem;
+
+				@media screen and (min-width: 768px) {
+					font-size: 4.8rem;
+				}
+			}
+
+			.tagline {
+				color: $white;
+				opacity: 0.7;
+				margin: 1.6rem 0 3.2rem;
+
+				@media screen and (min-width: 768px) {
+					margin-top: 2.4rem;
+				}
+			}
+		}
+	}
+}
