@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import ScheduleDemo from '../shared/ScheduleDemo/ScheduleDemo';
 import Partners from './Partners/Partners';
+import Features from './Features/Features';
 
 import { ReactComponent as BgCircle } from '../../assets/shared/desktop/bg-pattern-circle.svg';
 import heroImg from '../../assets/home/desktop/illustration-phone-mockup.svg';
@@ -24,6 +25,7 @@ const Home = () => {
 				</div>
 			</section>
 			<Partners />
+			<Features />
 		</main>
 	);
 };

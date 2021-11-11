@@ -1,0 +1,148 @@
+@import '../../../design/variables.scss';
+
+.features {
+	padding: 8rem 2.4rem;
+
+	@media screen and (min-width: 768px) {
+		padding: 10rem 4rem;
+	}
+	@media screen and (min-width: 1024px) {
+		padding: 15rem 4rem 9.6rem;
+		background-image: url(../../../assets/shared/desktop/bg-pattern-circle.svg);
+		background-repeat: no-repeat;
+		background-position: 150% 50%;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 8rem;
+
+		@media screen and (min-width: 768px) {
+			gap: 10rem;
+		}
+		@media screen and (min-width: 1024px) {
+			max-width: 1110px;
+			margin: 0 auto;
+			gap: 15rem;
+		}
+
+		.showcase {
+			display: flex;
+			flex-direction: column;
+
+			@media screen and (min-width: 768px) {
+				padding: 0 5.8rem;
+			}
+			@media screen and (min-width: 1024px) {
+				flex-direction: row;
+				padding: 0;
+				justify-content: space-between;
+
+				&.second {
+					flex-direction: row-reverse;
+				}
+			}
+
+			img {
+				width: 100%;
+
+				@media screen and (min-width: 1024px) {
+					width: 50%;
+				}
+			}
+
+			.content {
+				text-align: center;
+
+				@media screen and (min-width: 1024px) {
+					width: 445px;
+					text-align: left;
+					align-self: center;
+				}
+
+				.heading {
+					font-size: 3.6rem;
+					margin: 4.8rem 0 2.4rem;
+
+					@media screen and (min-width: 768px) {
+						font-size: 4.8rem;
+					}
+				}
+
+				.tagline {
+					margin: 0;
+				}
+			}
+		}
+
+		.group {
+			display: flex;
+			flex-direction: column;
+			gap: 4.8rem;
+
+			@media screen and (min-width: 768px) {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 1rem;
+			}
+			@media screen and (min-width: 1024px) {
+				gap: 3rem;
+			}
+
+			.item {
+				text-align: center;
+
+				.icon {
+					background: $blue;
+					border-radius: 50%;
+
+					@media screen and (min-width: 768px) {
+						width: 88px;
+						height: 88px;
+					}
+					@media screen and (min-width: 1024px) {
+						width: 106px;
+						height: 106px;
+					}
+				}
+
+				h3 {
+					font-size: 1.8rem;
+					font-weight: 700;
+					margin: 3rem 0 1.8rem;
+				}
+
+				p {
+					margin: 0;
+				}
+			}
+		}
+
+		.ready {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			gap: 3.2rem;
+
+			@media screen and (min-width: 768px) {
+				gap: 4rem;
+			}
+			@media screen and (min-width: 1024px) {
+				gap: unset;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			h2 {
+				font-size: 3.2rem;
+				margin: 0;
+
+				@media screen and (min-width: 768px) {
+					font-size: 4.8rem;
+				}
+			}
+		}
+	}
+}
