@@ -1,0 +1,85 @@
+@import '../../design/variables.scss';
+
+.footer {
+	padding: 4rem 0 5rem;
+	background: url(../../assets/shared/desktop/bg-pattern-circle.svg) no-repeat
+			50% -40%,
+		$bgSecondary;
+
+	@media screen and (min-width: 768px) {
+		background: $bgSecondary;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 3rem 4rem;
+		gap: 6.4rem;
+	}
+	@media screen and (min-width: 1024px) {
+		background: url(../../assets/shared/desktop/bg-pattern-circle.svg) no-repeat
+				155% 20%,
+			$bgSecondary;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4rem;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 6.4rem;
+		}
+		@media screen and (min-width: 1024px) {
+			max-width: 1110px;
+			margin: 0 auto;
+		}
+	}
+
+	.logo g {
+		fill: $white;
+	}
+
+	.list {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3.2rem;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			flex: 2;
+		}
+
+		.item a {
+			text-decoration: none;
+			color: $white;
+			opacity: 0.7;
+			font-weight: 700;
+			transition: opacity 200ms ease-in;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	.socials {
+		display: flex;
+		gap: 2.4rem;
+		align-items: center;
+
+		.socialItem {
+			path {
+				transition: all 200ms ease-in;
+			}
+
+			&:hover path {
+				fill: $primary;
+			}
+		}
+	}
+}
