@@ -7,6 +7,7 @@ import Features from './Features/Features';
 import { ReactComponent as BgCircle } from '../../assets/shared/desktop/bg-pattern-circle.svg';
 import heroImg from '../../assets/home/desktop/illustration-phone-mockup.svg';
 import styles from './Home.module.scss';
+import Callout from '../shared/Callout/Callout';
 
 const Home = () => {
 	return (
@@ -26,6 +27,7 @@ const Home = () => {
 			</section>
 			<Partners />
 			<Features />
+			<Callout />
 		</main>
 	);
 };

@@ -62,11 +62,6 @@ const Features = () => {
 						</p>
 					</div>
 				</div>
-
-				<div className={styles.ready}>
-					<h2>Ready to start?</h2>
-					<ScheduleDemo />
-				</div>
 			</div>
 		</section>
 	);
