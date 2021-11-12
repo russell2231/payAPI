@@ -30,6 +30,17 @@
 		}
 	}
 
+	&.dark {
+		background: transparent;
+		border: 1px solid $blue;
+		color: $textSecondary;
+
+		&:hover {
+			background: $blue;
+			color: $white;
+		}
+	}
+
 	&.demo {
 		@media screen and (min-width: 768px) {
 			position: absolute;
