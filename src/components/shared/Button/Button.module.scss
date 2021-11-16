@@ -10,6 +10,7 @@
 	font-weight: 700;
 	transition: background 250ms ease-in;
 	box-shadow: 10px 10px 25px -10px rgba($blue, 0.25);
+	min-width: 152px;
 
 	&.primary {
 		background: $btnPrimary;

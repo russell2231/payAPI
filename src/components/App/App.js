@@ -7,6 +7,7 @@ import About from '../About/About';
 import Footer from '../Footer/Footer';
 
 import styles from './App.module.scss';
+import Contact from '../Contact/Contact';
 
 function App() {
 	return (
@@ -21,6 +22,9 @@ function App() {
 				</Route>
 				<Route path='/about'>
 					<About />
+				</Route>
+				<Route path='/contact'>
+					<Contact />
 				</Route>
 			</Switch>
 			<Footer />
