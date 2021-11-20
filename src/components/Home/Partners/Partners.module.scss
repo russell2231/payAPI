@@ -35,18 +35,26 @@
 			align-items: center;
 			justify-content: space-between;
 			row-gap: 3.9rem;
+			padding: 0 2.4rem;
 
 			@media screen and (min-width: 768px) {
 				max-width: 536px;
 				margin: 0 auto;
 				grid-template-columns: 1fr 1fr 1fr;
 				column-gap: 6rem;
+				padding: 0;
 			}
 			@media screen and (min-width: 1440px) {
 				margin: unset;
 			}
 
 			.company {
+				width: 80%;
+
+				@media screen and (min-width: 768px) {
+					width: 100%;
+				}
+
 				& path {
 					fill: $white;
 				}

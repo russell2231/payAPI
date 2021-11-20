@@ -1,9 +1,15 @@
+import { useEffect } from 'react';
+
 import ScheduleDemo from '../shared/ScheduleDemo/ScheduleDemo';
 
 import { ReactComponent as BgCircle } from '../../assets/shared/desktop/bg-pattern-circle.svg';
 import styles from './About.module.scss';
 
 const About = () => {
+	useEffect(() => {
+		document.title = 'PayAPI | About';
+	}, []);
+
 	return (
 		<main className={styles.about}>
 			<BgCircle className={styles.bgCircle} />

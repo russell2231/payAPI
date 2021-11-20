@@ -11,7 +11,7 @@ import Contact from '../Contact/Contact';
 
 function App() {
 	return (
-		<div className={styles.wrapper}>
+		<div className={styles.wrapper} id='wrapper'>
 			<Header />
 			<Switch>
 				<Route exact path='/'>

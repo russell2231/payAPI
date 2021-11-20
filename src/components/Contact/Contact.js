@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import Callout from '../shared/Callout/Callout';
 import { ReactComponent as BgCircle } from '../../assets/shared/desktop/bg-pattern-circle.svg';
 import { ReactComponent as Tesla } from '../../assets/shared/desktop/tesla.svg';
@@ -10,6 +12,10 @@ import styles from './Contact.module.scss';
 import Form from './Form/Form';
 
 const Contact = () => {
+	useEffect(() => {
+		document.title = 'PayAPI | Contact';
+	}, []);
+
 	return (
 		<main className={styles.contact}>
 			<BgCircle className={styles.bgCircle} />

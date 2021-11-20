@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import ScheduleDemo from '../shared/ScheduleDemo/ScheduleDemo';
@@ -10,6 +11,10 @@ import styles from './Home.module.scss';
 import Callout from '../shared/Callout/Callout';
 
 const Home = () => {
+	useEffect(() => {
+		document.title = 'PayAPI';
+	}, []);
+
 	return (
 		<main className={styles.home}>
 			<BgCircle className={styles.bgCircle} />
