@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useGlobalContext } from '../../App/context';
 import formValidation from '../../../utilities/formValidation';
 
 import Button from '../../shared/Button/Button';
@@ -15,10 +16,24 @@ const INITIAL_FORM = {
 };
 
 const Form = () => {
+	const { demoEmail, handleDemoSchedule } = useGlobalContext();
 	const [helpRequest, setHelpRequest] = useState(INITIAL_FORM);
 	const [optIn, setOptIn] = useState(false);
 	const [showAlert, setShowAlert] = useState(false);
 	const errors = helpRequest.formErrors;
+
+	useEffect(() => {
+		if (demoEmail) {
+			setHelpRequest((prevState) => {
+				return {
+					...prevState,
+					email: demoEmail,
+					message:
+						'I would like to schedule and demo showing for (Enter date and time here)',
+				};
+			});
+		}
+	}, [demoEmail]);
 
 	const handleClick = () => {
 		setOptIn(!optIn);
@@ -54,6 +69,7 @@ const Form = () => {
 		if (formValidation(helpRequest, setErrors)) {
 			helpRequest.updates = optIn;
 			restoreToInitial();
+			handleDemoSchedule('');
 			toggleAlert();
 		}
 	};

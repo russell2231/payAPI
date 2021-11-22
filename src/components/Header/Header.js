@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useGlobalContext } from '../App/context';
 
 import Button from '../shared/Button/Button';
@@ -10,6 +10,7 @@ import styles from './Header.module.scss';
 
 const Header = () => {
 	const { windowWidth } = useGlobalContext();
+	let history = useHistory();
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const isMobile = windowWidth < 768;
 
@@ -78,7 +79,9 @@ const Header = () => {
 						</li>
 					</ul>
 
-					<Button primary>Schedule a Demo</Button>
+					<Button primary onClick={() => history.push('/contact')}>
+						Schedule a Demo
+					</Button>
 				</div>
 			</nav>
 		</header>

@@ -4,10 +4,15 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [demoEmail, setDemoEmail] = useState('');
 
 	const handleResize = useCallback(() => {
 		setWindowWidth(window.innerWidth);
 	}, []);
+
+	const handleDemoSchedule = (email) => {
+		setDemoEmail(email);
+	};
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
@@ -18,7 +23,7 @@ const AppProvider = ({ children }) => {
 	}, [handleResize]);
 
 	return (
-		<AppContext.Provider value={{ windowWidth }}>
+		<AppContext.Provider value={{ windowWidth, demoEmail, handleDemoSchedule }}>
 			{children}
 		</AppContext.Provider>
 	);

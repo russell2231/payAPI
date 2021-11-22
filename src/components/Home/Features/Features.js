@@ -1,5 +1,3 @@
-import ScheduleDemo from '../../shared/ScheduleDemo/ScheduleDemo';
-
 import easyImplement from '../../../assets/home/desktop/illustration-easy-to-implement.svg';
 import simpleUI from '../../../assets/home/desktop/illustration-simple-ui.svg';
 import { ReactComponent as Finances } from '../../../assets/home/desktop/icon-personal-finances.svg';
