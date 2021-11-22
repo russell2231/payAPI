@@ -27,7 +27,7 @@ const Header = () => {
 	useEffect(() => {
 		const clickedLink = (e) => {
 			const target = e.target.nodeName;
-			if (target === 'A') {
+			if (target === 'A' || target === 'BUTTON') {
 				setIsNavOpen(false);
 			}
 		};
