@@ -45,10 +45,11 @@ Users should be able to:
 - JavaScript
 - ReactJS
 - [React Router](https://reactrouter.com)
+- [Framer Motion](https://www.framer.com/fp/)
 
 ### Continued development
 
-I plan to continue working on implementing animations to enhance the user's experience.
+This is my first attempt at using framer motion for animations. I plan to continue working on implementing more animations to enhance the user's experience.
 
 ## Author
 
