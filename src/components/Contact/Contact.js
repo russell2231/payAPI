@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
+import { useReducedMotion, motion } from 'framer-motion';
 
+import { pageVariants } from '../../utilities/framerVariants';
 import Callout from '../shared/Callout/Callout';
 import { ReactComponent as BgCircle } from '../../assets/shared/desktop/bg-pattern-circle.svg';
 import { ReactComponent as Tesla } from '../../assets/shared/desktop/tesla.svg';
@@ -12,12 +14,23 @@ import styles from './Contact.module.scss';
 import Form from './Form/Form';
 
 const Contact = () => {
+	const shouldReduceMotion = useReducedMotion();
+	const variant = (element) => {
+		return shouldReduceMotion ? pageVariants.reduce : pageVariants[element];
+	};
+
 	useEffect(() => {
 		document.title = 'PayAPI | Contact';
 	}, []);
 
 	return (
-		<main className={styles.contact}>
+		<motion.main
+			className={styles.contact}
+			variants={variant('page')}
+			initial='hidden'
+			animate='visible'
+			exit='exit'
+		>
 			<BgCircle className={styles.bgCircle} />
 			<div className={styles.container}>
 				<h1 className={styles.title}>
@@ -39,7 +52,7 @@ const Contact = () => {
 				</div>
 			</div>
 			<Callout />
-		</main>
+		</motion.main>
 	);
 };
 

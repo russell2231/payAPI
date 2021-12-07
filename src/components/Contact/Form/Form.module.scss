@@ -19,9 +19,9 @@
 		text-align: center;
 		background: $success;
 		border-radius: 0 0 8px 8px;
-		transition: all 1s ease-in-out;
 		color: $textSecondary;
 		z-index: 1;
+		animation: openAlert 0.4s ease-out forwards;
 	}
 
 	.formGroup {
@@ -105,5 +105,20 @@
 			color: $white;
 			text-align: center;
 		}
+	}
+}
+
+@keyframes openAlert {
+	0% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

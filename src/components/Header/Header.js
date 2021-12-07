@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useGlobalContext } from '../App/context';
 
@@ -8,46 +8,33 @@ import { ReactComponent as Menu } from '../../assets/shared/mobile/menu.svg';
 import { ReactComponent as Close } from '../../assets/shared/mobile/close.svg';
 import styles from './Header.module.scss';
 
-const Header = () => {
+const Header = ({ showNav, setShowNav }) => {
 	const { windowWidth } = useGlobalContext();
 	let history = useHistory();
-	const [isNavOpen, setIsNavOpen] = useState(false);
+	const isNavOpen = showNav;
 	const isMobile = windowWidth < 768;
 
 	const toggleNav = () => {
-		setIsNavOpen(!isNavOpen);
+		setShowNav(!showNav);
 	};
 
 	useEffect(() => {
 		if (windowWidth >= 768) {
-			setIsNavOpen(false);
+			setShowNav(false);
 		}
 	}, [windowWidth]);
 
 	useEffect(() => {
-		const clickedLink = (e) => {
-			const target = e.target.nodeName;
-			if (target === 'A' || target === 'BUTTON') {
-				setIsNavOpen(false);
-			}
-		};
-
 		if (isNavOpen) {
 			document.body.style.overflowY = 'hidden';
 		} else {
 			document.body.style.overflowY = 'scroll';
 		}
-
-		isNavOpen && document.addEventListener('click', clickedLink);
-
-		return () => {
-			document.removeEventListener('click', clickedLink);
-		};
 	}, [isNavOpen]);
 
 	return (
 		<header className={styles.header}>
-			<nav className={`${styles.nav} ${isNavOpen ? styles.open : ''}`}>
+			<nav className={`${styles.nav} ${isNavOpen ? styles.open : null}`}>
 				<Link to='/'>
 					<Logo />
 				</Link>

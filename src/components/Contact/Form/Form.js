@@ -29,7 +29,7 @@ const Form = () => {
 					...prevState,
 					email: demoEmail,
 					message:
-						'I would like to schedule and demo showing for (Enter date and time here)',
+						'I would like to schedule a demo showing for (Enter date and time here)',
 				};
 			});
 		}

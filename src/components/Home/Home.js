@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useReducedMotion, motion } from 'framer-motion';
 
+import { pageVariants } from '../../utilities/framerVariants';
 import ScheduleDemo from '../shared/ScheduleDemo/ScheduleDemo';
 import Partners from './Partners/Partners';
 import Features from './Features/Features';
@@ -11,12 +13,23 @@ import styles from './Home.module.scss';
 import Callout from '../shared/Callout/Callout';
 
 const Home = () => {
+	const shouldReduceMotion = useReducedMotion();
+	const variant = (element) => {
+		return shouldReduceMotion ? pageVariants.reduce : pageVariants[element];
+	};
+
 	useEffect(() => {
 		document.title = 'PayAPI';
 	}, []);
 
 	return (
-		<main className={styles.home}>
+		<motion.main
+			className={styles.home}
+			variants={variant('page')}
+			initial='hidden'
+			animate='visible'
+			exit='exit'
+		>
 			<BgCircle className={styles.bgCircle} />
 			<section className={styles.hero}>
 				<img className={styles.heroImg} src={heroImg} alt='' />
@@ -33,7 +46,7 @@ const Home = () => {
 			<Partners />
 			<Features />
 			<Callout />
-		</main>
+		</motion.main>
 	);
 };
 

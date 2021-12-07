@@ -1,17 +1,29 @@
 import { useEffect } from 'react';
+import { useReducedMotion, motion } from 'framer-motion';
 
+import { pageVariants } from '../../utilities/framerVariants';
 import ScheduleDemo from '../shared/ScheduleDemo/ScheduleDemo';
-
 import { ReactComponent as BgCircle } from '../../assets/shared/desktop/bg-pattern-circle.svg';
 import styles from './About.module.scss';
 
 const About = () => {
+	const shouldReduceMotion = useReducedMotion();
+	const variant = (element) => {
+		return shouldReduceMotion ? pageVariants.reduce : pageVariants[element];
+	};
+
 	useEffect(() => {
 		document.title = 'PayAPI | About';
 	}, []);
 
 	return (
-		<main className={styles.about}>
+		<motion.main
+			className={styles.about}
+			variants={variant('page')}
+			initial='hidden'
+			animate='visible'
+			exit='exit'
+		>
 			<BgCircle className={styles.bgCircle} />
 			<div className={styles.container}>
 				<h1 className={styles.title}>
@@ -77,7 +89,7 @@ const About = () => {
 					<ScheduleDemo />
 				</div>
 			</div>
-		</main>
+		</motion.main>
 	);
 };
 

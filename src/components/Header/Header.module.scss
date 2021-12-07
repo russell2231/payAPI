@@ -23,6 +23,7 @@
 			background: transparent;
 			border: none;
 			cursor: pointer;
+			transition: all 500ms ease-in-out;
 
 			&:active {
 				transform: scale(0.9);
@@ -67,34 +68,6 @@
 	.nav.open {
 		.menu {
 			z-index: 5;
-		}
-
-		.listContainer {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			width: 300px;
-			background: $bgSecondary;
-			display: flex;
-			flex-direction: column;
-			padding: 9.5rem 2.4rem 0;
-			gap: 3.2rem;
-			z-index: 4;
-
-			.list {
-				border-top: 1px solid white;
-				padding-top: 4.3rem;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 3.2rem;
-
-				.itemLink {
-					color: $white;
-					font-size: 2rem;
-				}
-			}
 		}
 	}
 }
